@@ -2,13 +2,13 @@
 Easily integrate your Magento 2 store with workflow automation platforms like **n8n, Zapier**, and many more. Send Magento 2 emails as JSON to webhooks and bridge your store to countless services such as MailChimp, Sendgrid, HubSpot, ActiveCampaign, CRM systems, and others without needing any additional backend plugins.
 
 ## Table of Contents
-1. Features
-2. Installation 
-3. Configuration 
-4. Usage 
-5. Compatibility 
-6. Support 
-7. License 
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Configuration](#configuration)
+4. [Usage](#usage)
+5. [Compatibility](#compatibility)
+6. [Support](#support)
+7. [License](#license)
 
 ## Features
 - **Real-time Email Dispatching:** Send your Magento store emails as JSON payloads in real-time.
@@ -37,6 +37,9 @@ The module will now be installed and ready for configuration.
 
 ## Configuration
 Navigate to `Stores > Configuration > Advanced > System > Email Flow Sending Settings`
+![image](https://github.com/sysintnet/module-email-flow/assets/8642724/1b86909b-3cda-4b54-8cea-b97f7c3d7ec3)
+
+
 
 1. Enable plugin 
 2. Input your webhook URL.
