@@ -1,0 +1,40 @@
+{
+    "name": "sysint/module-email-flow",
+    "version": "1.0.0",
+    "description": "Connect email data to workflow automation and integrate with any app",
+    "keywords": [
+        "magento",
+        "email",
+        "workflow",
+        "automation",
+        "n8n",
+        "zapier"
+    ],
+    "authors": [
+        {
+            "name": "Sergey Vlasov",
+            "email": "sergey@sysint.net",
+            "homepage": "https://sysint.net"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/"
+    },
+    "type": "magento2-module",
+    "require": {
+        "php": "~7.4.0||~8.1.0||~8.2.0",
+        "magento/framework": "103.0.*",
+        "magento/module-email": "101.1.*"
+    },
+    "license": [
+        "GNU General Public License (GPL)"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Sysint\\EmailFlow\\": ""
+        }
+    }
+}

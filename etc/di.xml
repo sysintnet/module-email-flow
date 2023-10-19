@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Mail\Template\TransportBuilder">
+        <plugin name="TransportBuilderPlugin::Enable"
+                type="Sysint\EmailFlow\Plugin\TransportBuilderPlugin"/>
+    </type>
+
+    <type name="Sysint\EmailFlow\Adapter\ObjectMapper\ObjectMapperResolver">
+        <arguments>
+            <argument name="objectMappers" xsi:type="array">
+                <item name="store" xsi:type="object">Sysint\EmailFlow\Adapter\ObjectMapper\Store</item>
+                <item name="customer" xsi:type="object">Sysint\EmailFlow\Adapter\ObjectMapper\Customer</item>
+                <item name="order" xsi:type="object">Sysint\EmailFlow\Adapter\ObjectMapper\Order</item>
+                <item name="orderAddress" xsi:type="object">Sysint\EmailFlow\Adapter\ObjectMapper\OrderAddress</item>
+                <item name="subscriber" xsi:type="object">Sysint\EmailFlow\Adapter\ObjectMapper\Subscriber</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

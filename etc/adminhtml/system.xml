@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="system">
+            <group id="email_flow" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Flow Sending Settings</label>
+                <comment>Connect email data to workflow automation and integrate with any app</comment>
+                <field id="enable" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <comment>If this is enabled, all emails will be sent to the Web Hook</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="web_hook" translate="label comment" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Web Hook</label>
+                    <comment><![CDATA[<b>ONLY POST</b> https://yourwebflow.com/]]></comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="authentication" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Authentication</label>
+                    <source_model>Sysint\EmailFlow\Model\Config\Source\Authentication</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="authentication_key_name" translate="label comment" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Key Name</label>
+                    <comment>Example: X-Authy-API-Key</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="authentication">2</field>
+                    </depends>
+                </field>
+                <field id="authentication_key_value" translate="label comment" type="obscure" sortOrder="62" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Key Value</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="authentication">2</field>
+                    </depends>
+                </field>
+                <field id="authentication_basic_name" translate="label comment" type="text" sortOrder="63" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Name</label>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="authentication">1</field>
+                    </depends>
+                </field>
+                <field id="authentication_basic_value" translate="label comment" type="obscure" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Password</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="authentication">1</field>
+                    </depends>
+                </field>
+                <field id="debug" translate="label comment" type="select" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Debug</label>
+                    <comment><![CDATA[If this is enabled, responses will be logged <b>var/log/debug.log</b>]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="data_optimization_enable" translate="label comment" type="select" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Data Optimization</label>
+                    <comment>If this is enabled, NULL values and empty strings will be skipped</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
