@@ -18,7 +18,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/"
+        "issues": "https://github.com/sysintnet/module-email-flow/issues"
     },
     "type": "magento2-module",
     "require": {
