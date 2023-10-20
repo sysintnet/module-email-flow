@@ -10,7 +10,7 @@
                     <comment>If this is enabled, all emails will be sent to the Web Hook</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="web_hook" translate="label comment" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="web_hook" translate="label comment" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Web Hook</label>
                     <comment><![CDATA[<b>ONLY POST</b> https://yourwebflow.com/]]></comment>
                     <depends>
@@ -24,14 +24,14 @@
                         <field id="enable">1</field>
                     </depends>
                 </field>
-                <field id="authentication" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="authentication" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Authentication</label>
                     <source_model>Sysint\EmailFlow\Model\Config\Source\Authentication</source_model>
                     <depends>
                         <field id="enable">1</field>
                     </depends>
                 </field>
-                <field id="authentication_key_name" translate="label comment" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="authentication_key_name" translate="label comment" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Key Name</label>
                     <comment>Example: X-Authy-API-Key</comment>
                     <depends>
@@ -39,7 +39,7 @@
                         <field id="authentication">2</field>
                     </depends>
                 </field>
-                <field id="authentication_key_value" translate="label comment" type="obscure" sortOrder="62" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="authentication_key_value" translate="label comment" type="obscure" sortOrder="62" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Key Value</label>
                     <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                     <depends>
@@ -47,14 +47,14 @@
                         <field id="authentication">2</field>
                     </depends>
                 </field>
-                <field id="authentication_basic_name" translate="label comment" type="text" sortOrder="63" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="authentication_basic_name" translate="label comment" type="text" sortOrder="63" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Name</label>
                     <depends>
                         <field id="enable">1</field>
                         <field id="authentication">1</field>
                     </depends>
                 </field>
-                <field id="authentication_basic_value" translate="label comment" type="obscure" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="authentication_basic_value" translate="label comment" type="obscure" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Password</label>
                     <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
                     <depends>
