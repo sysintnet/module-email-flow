@@ -78,5 +78,4 @@ Magento 2.3, 2.4, 2.5, 2.6
 For any issues, questions, or feedback, please open an issue on our GitHub repository
 
 ## License
-This module is licensed under the GNU General Public License (GPL) license.
-
+This module is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

@@ -27,7 +27,7 @@
         "magento/module-email": "101.1.*"
     },
     "license": [
-        "GNU General Public License (GPL)"
+        "MIT"
     ],
     "autoload": {
         "files": [
