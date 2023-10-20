@@ -72,7 +72,8 @@ Example of the message:
 - Zapier
 
 ## Compatibility
-Magento 2.3, 2.4, 2.5, 2.6
+- Magento 2.3, 2.4, 2.5, 2.6
+- PHP 7.3, 7.4, 8.1, 8.2
 
 ## Support
 For any issues, questions, or feedback, please open an issue on our GitHub repository
