@@ -7,6 +7,7 @@
                 <authentication>0</authentication>
                 <debug>0</debug>
                 <data_optimization_enable>1</data_optimization_enable>
+                <flow_sending_mode>0</flow_sending_mode>
             </email_flow>
         </system>
     </default>

@@ -5,14 +5,19 @@ namespace Sysint\EmailFlow\Plugin;
 use Magento\Framework\Mail\Template\TransportBuilder;
 use Magento\Framework\Mail\TransportInterface;
 
+use Sysint\EmailFlow\Model\Config\Source\FlowSendingMode;
 use Sysint\EmailFlow\Model\Configuration;
 use Sysint\EmailFlow\Mail\TransportFactory;
 use Sysint\EmailFlow\Mail\TemplateFactory;
+use Sysint\EmailFlow\Mail\TransportDecoratorFactory;
 
 class TransportBuilderPlugin
 {
     /** @var TransportFactory */
     private $transportFactory;
+
+    /** @var TransportDecoratorFactory */
+    private $transportDecoratorFactory;
 
     /** @var TemplateFactory */
     private $templateFactory;
@@ -31,15 +36,18 @@ class TransportBuilderPlugin
 
     /**
      * @param TransportFactory $transport
+     * @param TransportDecoratorFactory $transportDecoratorFactory
      * @param TemplateFactory $templateFactory
      * @param Configuration $configuration
      */
     public function __construct(
         TransportFactory $transport,
+        TransportDecoratorFactory $transportDecoratorFactory,
         TemplateFactory $templateFactory,
         Configuration $configuration
     ) {
         $this->transportFactory = $transport;
+        $this->transportDecoratorFactory = $transportDecoratorFactory;
         $this->templateFactory = $templateFactory;
         $this->configuration = $configuration;
     }
@@ -59,7 +67,18 @@ class TransportBuilderPlugin
             $template->setVars($this->vars);
             $template->setTemplateId($this->templateIdentifier);
             $template->setTemplateOptions($this->templateOptions);
-            return $this->transportFactory->create(['message' => $output->getMessage(), 'template' => $template]);
+
+            $flowTransport = $this->transportFactory->create(
+                ['message' => $output->getMessage(), 'template' => $template]
+            );
+
+            if ($this->configuration->getFlowSendingMode() === FlowSendingMode::MIXED) {
+                return $this->transportDecoratorFactory->create(
+                    ['originalTransport' => $output, 'flowTransport' => $flowTransport]
+                );
+            }
+
+            return $flowTransport;
         }
 
         return $proceed();

@@ -17,6 +17,13 @@
                         <field id="enable">1</field>
                     </depends>
                 </field>
+                <field id="flow_sending_mode" translate="label comment" type="select" sortOrder="56" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Sending Mode</label>
+                    <source_model>Sysint\EmailFlow\Model\Config\Source\FlowSendingMode</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
                 <field id="authentication" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Authentication</label>
                     <source_model>Sysint\EmailFlow\Model\Config\Source\Authentication</source_model>

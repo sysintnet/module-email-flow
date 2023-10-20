@@ -45,14 +45,19 @@ Navigate to `Stores > Configuration > Advanced > System > Email Flow Sending Set
 
 1. Enable plugin 
 2. Input your webhook URL.
-3. Select authentication type: NONE, Base, API (`NONE by default`)
-4. Debug: Yes/No (`No - by default`)
-5. Data Optimization Yes/No (`Yes - by default`)
-6. Save the configuration.
+3. Sending mode. By default, mixed means that emails will be sent by SMTP + FLOW. You'll be able to set up your workflow and keep sending emails.
+4. Select authentication type: NONE, Base, API (`NONE by default`)
+5. Debug: Yes/No (`No - by default`). Log file `var/log/debug.log`
+6. Data Optimization Yes/No (`Yes - by default`)
+7. Save the configuration.
 
 ## Usage
 Once configured, the module will automatically send emails as JSON payloads to the specified webhook URL in real-time.
 This data can then be used in your preferred workflow automation platform to trigger workflows, save data, and integrate with other services like Mailchimp, Sendgrid, HubSpot & etc.
+
+When debugging is enabled, messages can be found in the log file `var/log/debug.log`
+Example of the message:
+`[2023-10-20T07:51:34.110881+00:00] .DEBUG: {"message":"Workflow was started"} [] []`
 
 ### Tested across platforms
 - N8N

@@ -38,6 +38,15 @@ class Configuration
     }
 
     /**
+     * Returns flow sending mode: Mixed, Flow only
+     * @return int
+     */
+    public function getFlowSendingMode() : int
+    {
+        return (int)$this->scopeConfig->getValue('system/email_flow/flow_sending_mode', ScopeInterface::SCOPE_STORE);
+    }
+
+    /**
      * Is data optimization enabled
      * @return bool
      */
