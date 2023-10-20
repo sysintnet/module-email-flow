@@ -34,11 +34,8 @@ class TransportDecorator implements TransportInterface
      */
     public function sendMessage()
     {
-        file_put_contents('/app/var/log/1.txt', 1 . "\n", 8);
         $this->originalTransport->sendMessage();
-        file_put_contents('/app/var/log/1.txt', 2 . "\n", 8);
         $this->flowTransport->sendMessage();
-        file_put_contents('/app/var/log/1.txt', 3 . "\n", 8);
     }
 
     /**
