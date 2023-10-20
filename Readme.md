@@ -20,7 +20,7 @@ Although you can only use workflow n8n or Zapier to send emails and SMS, by defa
 7. [License](#license)
 
 ## Features
-- **Real-time Email Dispatching:** Send your Magento store emails as JSON payloads in real-time.
+- **Real-time Email Dispatching:** Send your Magento store emails and objects like Customer, Order & etc., as JSON payloads in real-time.
 - **Universal Webhook Integration:** Easily connect to platforms like n8n, Zapier, and many others.
 - **Plug & Play:** No need for additional backend plugins or integrations.
 - **Secure:** Ensures that data is sent securely over HTTPS to the designated webhook. Supports Base Auth and API Auth.
