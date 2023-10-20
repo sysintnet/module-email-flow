@@ -1,5 +1,12 @@
 # Magento 2 Email to Webhook Module (Email Flow)
-Easily integrate your Magento 2 store with workflow automation platforms like **n8n, Zapier**, and many more. Send Magento 2 emails as JSON to webhooks and bridge your store to countless services such as MailChimp, Sendgrid, HubSpot, ActiveCampaign, CRM systems, and others without needing any additional backend plugins.
+Easily integrate your Magento 2 store with workflow automation platforms like **n8n, Zapier**, and many more using just one module.
+Send Magento 2 emails as JSON to webhooks and bridge your store to countless services such as MailChimp, Sendgrid, HubSpot, ActiveCampaign, CRM systems, and others without needing any additional backend plugins.
+
+It's not another SMTP provider, it's a way to send e-commerce data to an automation tool to easily connect any app without extra coding and installing additional plugins to your Magento store.
+This module is not a replacement for your current email provider and does not change your SMTP settings.
+Although you can only use workflow n8n or Zapier to send emails and SMS, by default emails will be sent through your current email provider and workflow, but you can always change this.
+
+**N8N Example workflow**
 ![image](https://github.com/sysintnet/module-email-flow/assets/8642724/c714d6eb-b9a3-4c52-b366-e4bef0dda4a1)
 
 
@@ -39,7 +46,8 @@ The module will now be installed and ready for configuration.
 
 ## Configuration
 Navigate to `Stores > Configuration > Advanced > System > Email Flow Sending Settings`
-![image](https://github.com/sysintnet/module-email-flow/assets/8642724/1b86909b-3cda-4b54-8cea-b97f7c3d7ec3)
+![image](https://github.com/sysintnet/module-email-flow/assets/8642724/16a1a808-fecd-409b-a849-242435112bcb)
+
 
 
 
